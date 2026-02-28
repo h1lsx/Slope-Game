@@ -20,6 +20,15 @@ Drop a star on the repo if you enjoy.
         <div id="gameContainer" style="width: 100vw; height: 100vh; margin: 0;"></div>
     </div>
     <script>
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+              console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch(function(error) {
+              console.error('Service Worker registration failed:', error);
+            });
+        }
         window.addEventListener('DOMContentLoaded', function() {
           document.body.style.zoom = 1 / window.devicePixelRatio;
           var gameInstance = UnityLoader.instantiate("gameContainer", "Build/slope.json", { onProgress: UnityProgress, Module: { onRuntimeInitialized: function() { UnityProgress(gameInstance, "complete") } } });

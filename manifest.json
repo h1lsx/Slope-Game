@@ -3,5 +3,10 @@
   "start_url": ".",
   "display": "fullscreen",
   "background_color": "black",
-  "description": ""
+  "description": "",
+  "icons": [{
+    "src": "slope.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }]
 }
